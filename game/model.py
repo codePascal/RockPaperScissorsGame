@@ -113,7 +113,14 @@ class RockPaperScissorModel:
 
         # Evaluate the game using test data
         ds_test = self.test_dataset()
+        ds_test = (
+            ds_test
+            .map(self.preprocess, num_parallel_calls=AUTOTUNE)
+            .batch(BATCH_SIZE)
+            .prefetch(AUTOTUNE)
+        )
         model.evaluate(ds_test)
+        self.model_path.parent.mkdir(parents=True, exist_ok=True)
         model.save(self.model_path)
 
     def test_sample(self):
