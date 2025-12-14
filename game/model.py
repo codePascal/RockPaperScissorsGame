@@ -126,7 +126,7 @@ class RockPaperScissorModel:
     def test_sample(self):
         """Get test sample from test dataset."""
         ds_test = self.test_dataset()
-        sample = next(iter(ds_test))
+        sample = next(iter(ds_test.shuffle(1024).take(1)))
         img = sample[0].numpy()
         label = self.classes[sample[1].numpy()]
         return img, label
