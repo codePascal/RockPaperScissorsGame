@@ -16,6 +16,10 @@ tensorflow-datasets = "^4.9.9"
 opencv-python = "^4.12.0.88"
 torch = {version = "^2.9.1+cu126", source = "pytorch-cu126"}
 torchvision = {version = "^0.24.1+cu126", source = "pytorch-cu126"}
+jupyterlab = "^4.5.1"
+pandas = "^2.3.3"
+pytorch-lightning = "^2.6.0"
+pylint = "^4.0.4"
 
 [[tool.poetry.source]]
 name = "pytorch-cu126"
