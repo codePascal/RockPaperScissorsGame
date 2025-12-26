@@ -20,6 +20,7 @@ jupyterlab = "^4.5.1"
 pandas = "^2.3.3"
 pytorch-lightning = "^2.6.0"
 pylint = "^4.0.4"
+mediapipe = "0.10.14"
 
 [[tool.poetry.source]]
 name = "pytorch-cu126"
