@@ -1,5 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Script to inspect training metrics
+
+Script will generate a plot depicting loss and accuracy per epoch.
+"""
 import argparse
 import pandas as pd
 import matplotlib.pyplot as plt

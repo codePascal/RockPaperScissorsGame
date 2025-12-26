@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Model inference
+
+Module implements the utility functions and inference pipeline for the RPS
+model.
+"""
 import torch
 import torch.nn as nn
 import cv2
@@ -64,17 +69,17 @@ def _img_to_x(img: Image):
 
 
 if __name__ == '__main__':
-    from model.train import DATA_DIR
+    from pathlib import Path
 
-    test_set = DATA_DIR.joinpath('rps-test-set', 'rps-test-set')
+    test_set = Path(__file__).parent.parent.joinpath('res', 'images')
     test_images = {
-        'paper': test_set.joinpath('paper', 'testpaper01-00.png'),
-        'rock': test_set.joinpath('rock', 'testrock01-00.png'),
-        'scissors': test_set.joinpath('scissors', 'testscissors01-00.png'),
+        'paper': test_set.joinpath('testpaper01-00.png'),
+        'rock': test_set.joinpath('testrock01-00.png'),
+        'scissors': test_set.joinpath('testscissors01-00.png'),
     }
     model = load_model()
     for gt, image in test_images.items():
-        batch = image_to_batch(image)
+        batch = image_to_batch(str(image))
         pred, pred_pct = infer(model, batch)
         print(f'Prediction   :  {pred} ({pred_pct:.2%})')
         print(f'Ground truth :  {gt}')

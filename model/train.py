@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""Script to train the CNN classifier.
+
+Script will run training based on hyperparameters in a pytorch-lightning
+context with the MobileNetV2 as the backbone.
+"""
 from pathlib import Path
 from typing import Type
 
