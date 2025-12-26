@@ -8,7 +8,7 @@ from game.inference import utils
 def main():
     app = controller.Controller(
         cap=capture.Camera(index=0, mirror=True),
-        predictor=inference.Predictor(),
+        predictor=inference.Detector(),
         overlay=render.OpenCVOverlay(),
         roi=utils.ImgRoi(0, 0, 200, 200),
         game=engine.Game(),
