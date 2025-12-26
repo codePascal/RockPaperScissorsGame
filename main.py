@@ -10,9 +10,9 @@ def main():
         cap=capture.Camera(index=0, mirror=True),
         predictor=inference.Detector(),
         overlay=render.OpenCVOverlay(),
-        roi=utils.ImgRoi(0, 0, 200, 200),
+        roi=utils.ImgRoi(x0=0, y0=0, w=200, h=200),
         game=engine.Game(),
-        confidence_threshold=0.2,
+        confidence_threshold=0.6,
         cooldown=4
     )
     app.run()
